@@ -12,6 +12,6 @@ dependencies:
   - nbserverproxy
   - streamlit
   - pip
-      - streamlit-option-menu
+      - git+https://github.com/victoryhb/streamlit-option-menu
       # - git+https://github.com/giswqs/leafmap
       # - git+https://github.com/giswqs/geemap 
