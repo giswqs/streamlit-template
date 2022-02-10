@@ -1,0 +1,17 @@
+name: demo
+channels:
+  - conda-forge
+dependencies:
+  - gdal
+  - geemap
+  - geopandas
+  - jupyter-server-proxy
+  - keplergl
+  - leafmap
+  - localtileserver
+  - nbserverproxy
+  - streamlit
+  - pip
+      - streamlit-option-menu
+      # - git+https://github.com/giswqs/leafmap
+      # - git+https://github.com/giswqs/geemap 
