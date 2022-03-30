@@ -7,14 +7,14 @@ st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
 # A dictionary of apps in the format of {"App title": "App icon"}
 # More icons can be found here: https://icons.getbootstrap.com
 
-apps = {
-    "home": {"title": "Home", "icon": "house"},
-    "heatmap": {"title": "Heatmap", "icon": "map"},
-    "upload": {"title": "Upload", "icon": "cloud-upload"},
-}
+apps = [
+    {"func": home.app, "title": "Home", "icon": "house"},
+    {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
+    {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
+]
 
-titles = [app["title"] for app in apps.values()]
-icons = [app["icon"] for app in apps.values()]
+titles = [app["title"] for app in apps]
+icons = [app["icon"] for app in apps]
 
 params = st.experimental_get_query_params()
 
@@ -45,6 +45,6 @@ with st.sidebar:
     )
 
 for app in apps:
-    if apps[app]["title"] == selected:
-        eval(f"{app}.app()")
+    if app["title"] == selected:
+        app["func"]()
         break
