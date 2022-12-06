@@ -9,8 +9,11 @@ st.set_page_config(layout="wide")
 def app():
     st.title("Change Detection")
 
+    @st.cache(persist=True)
+    def ee_authenticate(token_name="EARTHENGINE_TOKEN"):
+        geemap.ee_initialize(token_name=token_name)
     col1, col2 = st.columns([4, 1])
-
+    ee_authenticate(token_name='4/1AfgeXvvqlc4MSQAZZ60t4KKUk_aNPzG15UT1GOju2sAeN18UXUGMTOkecP0')
     Map = geemap.Map()
     Map.add_basemap("HYBRID")
 
