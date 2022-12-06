@@ -1,16 +1,37 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, upload  # import your app modules here
+from apps import home, heatmap, upload, test, change_detection, Timelapse, ChangeDetection  # import your app modules here
 
-st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
+st.sidebar.title("Usage")
+st.sidebar.info(
+    """
+    1) Enter Latitude and Longitude of the area you want to view
+    2) Set the start and end dates for the images
+    3) select the layers to display on the left and right map panes
+    """
+)
+
+st.sidebar.title("Instructions")
+st.sidebar.info(
+    """
+    1) Enter Latitude and Longitude of the area you want to view
+    2) Set your date ranges
+    3) To view the change detection, set either the "New Bare Ground" or the "New Built-Up area" to the left or right map panes
+    """
+)
+
 
 # A dictionary of apps in the format of {"App title": "App icon"}
 # More icons can be found here: https://icons.getbootstrap.com
 
 apps = [
-    {"func": home.app, "title": "Home", "icon": "house"},
-    {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
-    {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
+    # {"func": home.app, "title": "Home", "icon": "house"},
+    # {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
+    # {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
+    # {"func": test.app, "title": "Test", "icon": "cloud-upload"},
+    # {"func": change_detection.app, "title": "Change", "icon": "map"},
+    # {"func": Timelapse.app, "title": "Timelapse", "icon": "map"},
+    {"func": ChangeDetection.app, "title": "Change Detection", "icon": "map"}
 ]
 
 titles = [app["title"] for app in apps]
@@ -36,12 +57,7 @@ with st.sidebar:
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This web [app](https://share.streamlit.io/giswqs/streamlit-template) is maintained by [Qiusheng Wu](https://wetlands.io). You can follow me on social media:
-            [GitHub](https://github.com/giswqs) | [Twitter](https://twitter.com/giswqs) | [YouTube](https://www.youtube.com/c/QiushengWu) | [LinkedIn](https://www.linkedin.com/in/qiushengwu).
-        
-        Source code: <https://github.com/giswqs/streamlit-template>
-
-        More menu icons: <https://icons.getbootstrap.com>
+        test
     """
     )
 
